@@ -2,40 +2,31 @@ package Assignments;
 import java.util.Scanner;
 
 public class PaintCalculator {
-    static int NumRoom;
-    static int PaintPrice;
-    static int NumSqtft;
-
     public static void main(String[] args)
     {
-        final int COVERAGE = 400;
-        final int DOOR = 20;
-        final int WINDOW = 15;
-        int length, width, height, doors, windows;
+        final int COVERAGE = 350;
+        int length, width, height;
         double totalSqFt;
         double paintNeeded;
-        Scanner scan = new Scanner (System.in);
 
-        System.out.println("Enter the length of the room: ");
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("Enter the length of the room >>> ");
         length = scan.nextInt();
 
-        System.out.println("Enter the width: ");
+        System.out.println("Enter the width of the room >>> ");
         width = scan.nextInt();
 
-        System.out.println("Enter the height: ");
+        System.out.println("Enter the height of the room >>> ");
         height = scan.nextInt();
 
-        System.out.println("Enter the number of doors: ");
-        doors = scan.nextInt();
+        totalSqFt = (((height * length) * 2) + ((width * height)*2));
+        paintNeeded = (totalSqFt /  COVERAGE);
 
-        System.out.println("Enter the number of windows: ");
-        windows = scan.nextInt();
+        System.out.println(paintNeeded + " gallons of paint is needed to paint a  " +
+                length + " by " + width + "  room that is " + height + " tall. Total SQFT: " +
+                totalSqFt);
 
-        totalSqFt = 2 * width * height + 2 * length * height - DOOR*doors - WINDOW*windows;
-        paintNeeded = totalSqFt / COVERAGE;
-
-        System.out.println("Length= " + length + "\nWidth= " + width +  "\nHeight= " + height + "\nNumber of doors: " +
-                doors + "\nNumber of windows: " + windows + "\nGallons of Paint Needed= " + paintNeeded);
 
     }
 }
