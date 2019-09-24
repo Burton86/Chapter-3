@@ -9,7 +9,6 @@ public class TempConversion {
 
         System.out.println("Enter 3 temperatures in Fahrenheit at 3 different hours in the day >>>");
         temperature = in.nextInt();
-
         temperature = ((temperature - 32)*5)/9;
 
         System.out.println("Temperature in Celsius = " + temperature);
